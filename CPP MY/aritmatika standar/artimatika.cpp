@@ -18,7 +18,7 @@ int main(){
     hasil = a * b;
     cout << a << " x " << b << " = " << hasil << endl;
 
-    // pembagian
+    // modulus
     float a_bagi = 6;
     float b_bagi = 4;
     float hasil_bagi = a_bagi / b_bagi;
