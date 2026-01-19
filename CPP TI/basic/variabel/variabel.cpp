@@ -26,6 +26,4 @@ int main(){
   cout << "Alamat: " << alamat << endl;
   cout << "Asal: " << asal << endl;
 
-
-
 }
