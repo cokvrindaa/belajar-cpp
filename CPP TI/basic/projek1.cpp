@@ -31,7 +31,10 @@ int main() {
         do {
             cout << "Nilai siswa (0-100): ";
             cin >> nilaiSiswa;
-        } while (nilaiSiswa < 0 || nilaiSiswa > 100);
+            if (nilaiSiswa < 0 || nilaiSiswa > 100 || nilaiSiswa != int(nilaiSiswa)){
+                cout << "masukan nilai siswa yang valid"<< endl;
+            }
+        } while (nilaiSiswa < 0 || nilaiSiswa > 100 || nilaiSiswa != int(nilaiSiswa) );
         
         // Menambahkan totalNilai siswa dari nilai per masing siswa
         totalNilaiSiswa += nilaiSiswa; 
