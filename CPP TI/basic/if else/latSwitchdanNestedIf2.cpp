@@ -29,7 +29,7 @@ int main()
 
   // Pemilihan level/role
   bool ulangiInputLevel = true;
-  char validasiUlangiInputLevel;
+  string validasiUlangiInputLevel;
   do
   {
     switch (level)
@@ -39,30 +39,35 @@ int main()
       keteranganLevel = "admin";
       ulangiInputLevel = false;
       break;
+      
     case 2:
       cout << "\nRole anda adalah guru! \n";
       keteranganLevel = "guru";
       ulangiInputLevel = false;
-      break;
+      return 0;
     case 3:
       cout << "\nRole anda adalah siswa! \n";
       keteranganLevel = "siswa";
       ulangiInputLevel = false;
-      break;
+      return 0;
     default:
-      cout << "Input anda invalid!, mau ulangi memilih? (y/n): ";
+      cout << "Input anda invalid!, mau ulangi memilih? (y/n): \n";
       cin >> validasiUlangiInputLevel;
-      if (validasiUlangiInputLevel == 'y')
+      if (validasiUlangiInputLevel == "y" || validasiUlangiInputLevel == "Y")
       {
         ulangiInputLevel = true;
+        cout << "masukan level!: ";
         cin >> level;
       }
-      else
+      else if (validasiUlangiInputLevel == "n" || validasiUlangiInputLevel == "N")
       {
         ulangiInputLevel = false;
         cout << "Baiklah, terimakasih telah menggunakan program ini.";
         return 0;
+      } else {
+        break;
       }
+      break;
     }
   } while (ulangiInputLevel);
 
@@ -83,23 +88,23 @@ int main()
       }
       else
       {
-        cout << "Password Salah! \n \n";
+          string validasiUlangiInputAdmin;
+          while (true)
+{
+    cout << "Apakah anda mau ulangi input? (y/n): ";
+    cin >> validasiUlangiInputAdmin;
 
-        char validasiUlangiInputAdmin;
-        cout << "Apakah anda mau ulangi input? (y/n): ";
-        cin >> validasiUlangiInputAdmin;
+    if (validasiUlangiInputAdmin == "y" || validasiUlangiInputAdmin == "Y")
+        break;
 
-        if (validasiUlangiInputAdmin == 'y' || validasiUlangiInputAdmin == 'Y')
-        {
-          ulangiInputAdmin = true;
-        }
-        else
-        {
-          ulangiInputAdmin = false;
-          cout << "Baiklah, terimakasih telah menggunakan program ini.";
+    if (validasiUlangiInputAdmin == "n" || validasiUlangiInputAdmin == "N")
+    {
+        cout << "Baiklah, terimakasih telah menggunakan program ini.";
+        return 0;
+    }
 
-          break;
-        }
+    cout << "Input harus y atau n!\n";
+}
       }
     }
   } while (ulangiInputAdmin);
